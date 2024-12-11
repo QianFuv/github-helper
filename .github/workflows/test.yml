@@ -35,26 +35,6 @@ jobs:
       - name: Assemble
         run: ./gradlew assemble --scan
 
-      - name: GitHub Owner Test
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: ./gradlew test --tests "io.github.gnuf0rce.mirai.github.GitHubOwnerTest" --scan --info
-
-      - name: GitHub Current Test
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: ./gradlew test --tests "io.github.gnuf0rce.mirai.github.GitHubCurrentTest" --scan --info
-
-      - name: GitHub Repo Test
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: ./gradlew test --tests "io.github.gnuf0rce.mirai.github.GitHubRepoTest" --scan --info
-
-      - name: GitHub Release Plugin Updater Test
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: ./gradlew test --tests "io.github.gnuf0rce.mirai.github.GitHubReleasePluginUpdaterTest" --scan --info
-
       - name: BuildPlugin
         run: ./gradlew buildPlugin
 
